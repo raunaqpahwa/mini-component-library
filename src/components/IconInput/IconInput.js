@@ -23,30 +23,30 @@ const IconInput = ({ label, icon, width = 250, size, placeholder }) => {
 const Wrapper = styled.div`
   width: ${(props) => props.width + "px"};
   position: relative;
+  color: ${COLORS.gray700};
+  &:hover {
+    color: ${COLORS.black};
+  }
 `;
 
 const Input = styled.input`
   border: none;
   width: 100%;
   outline-offset: 2px;
-  color: ${COLORS.gray700};
   font-weight: 700;
+  color: inherit;
   font-size: ${(props) =>
     props.size === "large" ? 18 / 16 + "rem" : 14 / 16 + "rem"};
   padding: ${(props) => (props.size === "large" ? "8px 36px" : "4px 24px")};
   padding-top: ${(props) => (props.size === "large" ? "10px" : "6px")};
   border-bottom: 1px solid ${COLORS.black};
+
   &::placeholder {
     color: ${COLORS.gray500};
     font-weight: 400;
   }
 
   &:focus {
-    border-bottom: 2px solid ${COLORS.black};
-  }
-
-  &:hover {
-    color: ${COLORS.black};
     border-bottom: 2px solid ${COLORS.black};
   }
 `;
@@ -56,15 +56,10 @@ const IconWrapper = styled.div`
   top: 0;
   left: 0;
   bottom: 0;
-  color: ${COLORS.gray700};
   width: ${(props) => props.size + "px"};
   height: ${(props) => props.size + "px"};
   margin: auto;
   pointer-events: none;
-
-  &:hover {
-    color: ${COLORS.black};
-  }
 `;
 
 export default IconInput;
